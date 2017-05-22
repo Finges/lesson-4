@@ -20,9 +20,9 @@ class PastryPage extends React.Component {
             <div className='price'>{formatPrice(pastry.price)}</div>
           </div>
         </div>
-        <form method='POST' action='/orders' className='add-to-order' onSubmit={this.props.addToOrder}>
+        <form method='POST' action='/order' className='add-to-order' onSubmit={this.props.addToOrder}>
           <input type='hidden' value={pastry.name} ref={(input) => { this.pastryName = input }} />
-          <button type='submit'>Add to Order</button>
+          <input type='submit' value='Add to Basket' />
         </form>
       </div>
     )
