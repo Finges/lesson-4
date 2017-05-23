@@ -21,7 +21,7 @@ class Basket extends React.Component {
       console.log(basket)
       console.log(Object.keys(basket))
     return (
-<div> yay
+<div>
 <table>
 <tbody>
 <tr>
@@ -36,13 +36,13 @@ class Basket extends React.Component {
    <td>{basket[pastry].name}</td> 
    <td>{basket[pastry].quantity}</td>
    <td>
-   <form action="/basket" method='POST' onSubmit={this.props.addToOrder}>
-   <button onClick='submit'>+</button>
+   <form onSubmit={this.props.addToOrder}>
+   <button type='submit'>+</button>
    <input type='hidden' value={basket[pastry].name} ref={(input) => { this.pastryName = input }} />
    </form>
-   <form action="" method='POST' onSubmit={this.props.removeFromOrder}>
+   <form onSubmit={this.props.removeFromOrder}>
    <input type='hidden' value={basket[pastry].name} ref={(input) => { this.pastryName = input }} />
-   <button onClick='submit'>-</button>
+   <button type='submit'>-</button>
    </form>
    </td>
    <td>{formatPrice(basket[pastry].price)}</td>
@@ -56,6 +56,10 @@ class Basket extends React.Component {
 }
 </tbody>
 </table>
+  
+   <form onSubmit={this.props.clearOrder}>
+   <button type='submit'>Clear Order</button>
+   </form>
   </div>
 
 

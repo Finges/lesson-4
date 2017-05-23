@@ -70,6 +70,11 @@ class Root extends React.Component {
 
   clearOrder (e) {
     e.preventDefault()
+    let order = Object.assign({}, this.state.order)
+    order = {}
+    this.setState({
+      order
+    })
   }
 
   render () {
